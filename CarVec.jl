@@ -4,10 +4,14 @@
 # Ω -> Right Ascension of the Ascending Node
 # ω -> Argument of Periapsis
 # μ -> graviational parameter of the celestial body
+# M -> Mean anamoly
+
 include("Rot.jl")
 include("NewtonRaphson.jl")
 
-function CarVec(a,e,i,Ω,ω,M,μ)
+#Calculates The Position and Velocity in catesian coordinates of Inertial Frame from
+# the orbital elements listed above. 
+function CartesianVector(a,e,i,Ω,ω,M,μ)
     I = [1 0 0] #unit vectors 
     J = [0 1 0]
     K = [0 0 1]  
